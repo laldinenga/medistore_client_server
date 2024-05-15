@@ -18,7 +18,7 @@ export default function Signin() {
     const navigate = useNavigate();
  
     const signin_user = async (e) => {
-        e.preventdefault();
+        e.preventDefault();
         try {
             await axios.post("http://localhost:8080/api/auth/login", usersDetail);
             alert("Successful login")
@@ -52,7 +52,7 @@ export default function Signin() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form className="space-y-6" onSubmit={(e) =>  signin_user(e)}>
+                    <form className="space-y-6" onSubmit={signin_user}>
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                 Email address
