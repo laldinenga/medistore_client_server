@@ -70,38 +70,46 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react"
+import {useParams} from "react-router-dom";
 
-// export default function ProductDisplay() {
+
+// export default function CommonProductDisplay(Category) {
 
 //     const [products, setProducts] = useState();
 
+//     // const url = "http://localhost:8080/admin/showitembycategory/" + encodeURIComponent(Category);
+
+//     const url = `http://localhost:8080/admin/showitembycategory/${Category}`;
+
 //     useEffect(() => {
-//         axios.get("http://localhost:8080/admin/showitems").then((response) => {
+//         axios.get(url).then((response) => {
 //             setProducts(response.data.products);
 //         })
 //     }, [])
-export default function ProductDisplay() {
-    const[products, setProducts] = useState([]);
+export default function CommonProductDisplay({category}) {
+    const [products, setProducts] = useState([]);
 
-    useEffect(() =>{
+    // const {Category} = useParams();
+    
+    useEffect(() => {
         loaditems();
     }, []);
 
-    const loaditems = async()=>{
-        const result = await axios.get("http://localhost:8080/admin/showitems", {
-            validateStatus:() => {
-                    return true;
-                }
+    const loaditems = async () => {
+        const result = await axios.get(`http://localhost:8080/admin/showitembycategory/${category}`, {
+            validateStatus: () => {
+                return true;
             }
+        }
         );
         if (result.status === 302) {
             setProducts(result.data);
         }
         console.log(products.filepath);
-            
+
     };
 
-    // href={product.href}
+
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -113,12 +121,12 @@ export default function ProductDisplay() {
                             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                 <img
                                     src= {`/Images/${product.name}.jpg`}
-                                    className="h-25 w-25 object-contain object-center group-hover:opacity-75"
+                                    // alt={product.imageAlt}
+                                    className="h-full w-full object-cover object-center group-hover:opacity-75"
                                 />
                             </div>
                             <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-                            <p className="mt-2 text-lg font-medium text-gray-900">${product.price}</p>
-                            <a className= " mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded" href="/">Add to Cart</a>
+                            <p className="mt-1 text-lg font-medium text-gray-900">${product.price}</p>
                         </a>
                     ))}
                 </div>
@@ -126,5 +134,3 @@ export default function ProductDisplay() {
         </div>
     )
 } 
-
-

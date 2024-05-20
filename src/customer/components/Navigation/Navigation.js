@@ -30,18 +30,19 @@ const navigation = {
         {
           id: 'Items',
           name: 'Items',
+          // , onclick: 'CommonProductDisplay("Skin Care")'
           items: [
-            { name: 'Skin Care', href: "http://localhost:8080/admin/showitembycategory/Skin Care"},
-            { name: 'Vitamins', href: '#' },
-            { name: 'Weight loss', href: '#' },
-            { name: 'Baby Care', href: '#' },
-            { name: 'Sexual Health', href: '#' },
-            { name: 'Supplements', href: '#' },
-            { name: 'Medicines', href: '#' },
-            { name: 'Personal Care', href: '#' },
-            { name: 'Beauty and Cosmetics', href: '#' },
-            { name: 'Dental Health', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: 'Skin Care'}, //, href: "/navigateproduct"},
+            { name: 'Vitamins'}, //href: '/navigateproduct', onclick: 'CommonProductDisplay("Vitamins")' },
+            { name: 'Weight loss', href: '/navigateproduct', onclick: 'CommonProductDisplay("Weight loss")' },
+            { name: 'Baby Care', href: '/navigateproduct', onclick: 'CommonProductDisplay("Baby Care")' },
+            { name: 'Sexual Health', href: '/navigateproduct', onclick: 'CommonProductDisplay("Sexual Health")' },
+            { name: 'Supplements', href: '/navigateproduct', onclick: 'CommonProductDisplay("Supplements")' },
+            { name: 'Medicines', href: '/navigateproduct', onclick: 'CommonProductDisplay("Medicines")' },
+            { name: 'Personal Care', href: '/navigateproduct', onclick: 'CommonProductDisplay("Personal Care")' },
+            { name: 'Beauty and Cosmetics', href: '/navigateproduct', onclick: 'CommonProductDisplay("Beauty and Cosmetics")' },
+            { name: 'Dental Health', href: '/navigateproduct', onclick: 'CommonProductDisplay("Dental Health")' },
+            { name: 'Browse All', href: '/navigateproduct', onclick: 'CommonProductDisplay("Browse All")' },
           ],
         },
         {
@@ -184,7 +185,7 @@ const navigation = {
   ],
   pages: [
     { name: 'Company',href: '/' },
-    { name: 'Stores', href: '#' },
+    { name: 'Stores', href: '/displayproduct' },
   ],
 }
 
@@ -439,9 +440,10 @@ export default function Navigation() {
                                           >
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
-                                                <a href={item.href} className="hover:text-gray-800">
-                                                  {item.name}
-                                                </a>
+                                                <Link to={`/navigateproduct/${item.name}`} className="hover:text-gray-800">{item.name}</Link>
+                                                {/* <a href={item.href} className="hover:text-gray-800">
+                                                //   {item.name}
+                                                // </a> */}
                                               </li>
                                             ))}
                                           </ul>

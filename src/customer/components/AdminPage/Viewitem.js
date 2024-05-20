@@ -33,46 +33,51 @@ const Viewitem = () => {
     return (
         <section>
             <Search search={search} setSearch={setSearch}/>
-            <table className="table table-bordered table-hover shadow">
+            <table className=" table table-bordered table-hover shadow">
                 <thead>
                     <tr className="text-center">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Manufacturer</th>
-                        <th>Manufacturing Date</th>
-                        <th>Expiry Date</th>
-                        <th>Category</th>
-                        <th colSpan="3">Actions</th>
+                        <th className="px-4 py-2">ID</th>
+                        <th className="px-4 py-2">Name</th>
+                        <th className="px-4 py-2">Price</th>
+                        <th className="px-4 py-2">Manufacturer</th>
+                        <th className="px-4 py-2">Manufacturing Date</th>
+                        <th className="px-4 py-2">Expiry Date</th>
+                        <th className="px-4 py-2">Category</th>
+                        <th className="px-4 py-2">Image</th>
+                        <th className="px-4 py-2" colSpan="3">Actions</th>
                     </tr>
                 </thead>
 
-                <tbody className="text-center">
+                <tbody className="text-center px-4 py-2">
                     {items.filter((st) => st.name.toLowerCase().includes(search))
                     .map((item, index)=>(
                         <tr key={item.id}>
                             <th scope="row" key={index}>
                                 {index + 1}
                             </th>
-                            <td>{item.name}</td>
+                            <td className="px-4 py-2">{item.name}</td>
                             <td>{item.price}</td>
                             <td>{item.manufacturer}</td>
                             <td>{item.manufacturingdate}</td>
                             <td>{item.expirydate}</td>
-                            <td>{item.category}</td>
-                            <td className="mx-5">
+                            <td className="px-4 py-2">{item.category}</td>
+                            <td className="px-4 py-2">
+                                <img src= {`/Images/${item.name}.jpg`}  
+                                style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
+                            </td>
+                            <td className="mx-10">
 
                                 <Link to={`/item-profile/${item.id}`} className="btn btn-info">
                                      <FaEye/>
                                 </Link>
                             </td>
-                            <td className="mx-5">
+                            <td className="mx-10">
 
-                                <Link to={`/edit-item/${item.id}`} className="btn btn-warning">
+                                <Link to={`/admin/viewitems/edititem/${item.id}`} className="btn btn-warning">
                                      <FaEdit/>
                                 </Link>
                             </td>
-                            <td className="mx-5">
+                            <td className="mx-10">
 
                                 <button className="btn btn-danger" onClick={()=> handleDelete(item.id)}>
                                      <FaTrashAlt/>
