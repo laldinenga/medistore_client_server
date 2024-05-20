@@ -9,7 +9,6 @@ import Fulldisplay from './customer/components/Product/Fulldisplay.js';
 import Shoppingcarts from "./customer/components/Home/Shoppingcarts.js";
 import AddItem from "./customer/components/AdminPage/AddItem.js";
 import Viewitem from './customer/components/AdminPage/Viewitem.js';
-import Display from './customer/components/Product/Display.js';
 import Items from './customer/components/Home/Items.js';
 
 
@@ -27,8 +26,6 @@ function App() {
           <Route exact path="/shoppingcart" element={<Shoppingcarts />}></Route>
           <Route exact path="/admin/additem" element={<AddItem />}></Route>
           <Route exact path="/admin/viewitems" element={<Viewitem />}></Route>
-          <Route exact path="/users/displayitems" element={<Display />}></Route>
-          <Route exact path="/users/items" element={<Items />}></Route>
         </Routes>
       </Router>
     </main> 

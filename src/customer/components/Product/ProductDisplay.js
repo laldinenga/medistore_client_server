@@ -33,7 +33,7 @@
 //         imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
 //         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
 //     },
-//     {  
+//     {
 //         id: 5,
 //         name: 'Machined Mechanical Pencil',
 //         href: '#',
@@ -74,9 +74,9 @@ import { useEffect, useState } from "react"
 export default function ProductDisplay() {
 
     const [products, setProducts] = useState();
-    
+
     useEffect(() => {
-        axios.get("url").then((response)=>{
+        axios.get("http://localhost:8080/admin/showitems").then((response) => {
             setProducts(response.data.products);
         })
     }, [])
