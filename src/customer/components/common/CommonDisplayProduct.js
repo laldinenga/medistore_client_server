@@ -86,14 +86,14 @@ import {useParams} from "react-router-dom";
 //             setProducts(response.data.products);
 //         })
 //     }, [])
-export default function CommonProductDisplay({category}) {
+export default function CommonProductDisplay() {
     const [products, setProducts] = useState([]);
 
-    // const {Category} = useParams();
+    const {category} = useParams();
     
     useEffect(() => {
         loaditems();
-    }, []);
+    }, [category]);
 
     const loaditems = async () => {
         const result = await axios.get(`http://localhost:8080/admin/showitembycategory/${category}`, {
@@ -105,7 +105,6 @@ export default function CommonProductDisplay({category}) {
         if (result.status === 302) {
             setProducts(result.data);
         }
-        console.log(products.filepath);
 
     };
 

@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/admin/viewitems" element={<Viewitem />}></Route>
           <Route exact path="/admin/viewitems/edititem/:id" element={<EditItems/>}></Route>
           <Route exact path="/navigateproduct/:category" element={<CommonDisplayProduct/>}></Route>
-          
+  
         </Routes>
       </Router>
     </main> 
