@@ -1,11 +1,12 @@
 
 import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
+import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Stack from '@mui/material/Stack';
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const navigation = {
   categories: [
@@ -32,8 +33,8 @@ const navigation = {
           name: 'Items',
           // , onclick: 'CommonProductDisplay("Skin Care")'
           items: [
-            { name: 'Skin Care'}, //, href: "/navigateproduct"},
-            { name: 'Vitamins'}, //href: '/navigateproduct', onclick: 'CommonProductDisplay("Vitamins")' },
+            { name: 'Skin Care' }, //, href: "/navigateproduct"},
+            { name: 'Vitamins' }, //href: '/navigateproduct', onclick: 'CommonProductDisplay("Vitamins")' },
             { name: 'Weight loss', href: '/navigateproduct', onclick: 'CommonProductDisplay("Weight loss")' },
             { name: 'Baby Care', href: '/navigateproduct', onclick: 'CommonProductDisplay("Baby Care")' },
             { name: 'Sexual Health', href: '/navigateproduct', onclick: 'CommonProductDisplay("Sexual Health")' },
@@ -127,64 +128,64 @@ const navigation = {
       ],
     },
     {
-        id: 'My Accounts',
-        name: 'My Accounts',
-        featured: [
-          {
-            name: 'New Arrivals',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-            imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-          },
-          {
-            name: 'Artwork Tees',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
-            imageAlt:
-              'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-          },
-        ],
-        sections: [
-          {
-            id: 'Items',
-            name: 'Items',
-            items: [
-              { name: 'Tops', href: '#' },
-              { name: 'Pants', href: '#' },
-              { name: 'Sweaters', href: '#' },
-              { name: 'T-Shirts', href: '#' },
-              { name: 'Jackets', href: '#' },
-              { name: 'Activewear', href: '#' },
-              { name: 'Browse All', href: '#' },
-            ],
-          },
-          {
-            id: 'accessories',
-            name: 'Accessories',
-            items: [
-              { name: 'Watches', href: '#' },
-              { name: 'Wallets', href: '#' },
-              { name: 'Bags', href: '#' },
-              { name: 'Sunglasses', href: '#' },
-              { name: 'Hats', href: '#' },
-              { name: 'Belts', href: '#' },
-            ],
-          },
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Re-Arranged', href: '#' },
-              { name: 'Counterfeit', href: '#' },
-              { name: 'Full Nelson', href: '#' },
-              { name: 'My Way', href: '#' },
-            ],
-          },
-        ],
-      },
+      id: 'My Accounts',
+      name: 'My Accounts',
+      featured: [
+        {
+          name: 'New Arrivals',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
+          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
+        },
+        {
+          name: 'Artwork Tees',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
+          imageAlt:
+            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+        },
+      ],
+      sections: [
+        {
+          id: 'Items',
+          name: 'Items',
+          items: [
+            { name: 'Tops', href: '#' },
+            { name: 'Pants', href: '#' },
+            { name: 'Sweaters', href: '#' },
+            { name: 'T-Shirts', href: '#' },
+            { name: 'Jackets', href: '#' },
+            { name: 'Activewear', href: '#' },
+            { name: 'Browse All', href: '#' },
+          ],
+        },
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            { name: 'Watches', href: '#' },
+            { name: 'Wallets', href: '#' },
+            { name: 'Bags', href: '#' },
+            { name: 'Sunglasses', href: '#' },
+            { name: 'Hats', href: '#' },
+            { name: 'Belts', href: '#' },
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            { name: 'Re-Arranged', href: '#' },
+            { name: 'Counterfeit', href: '#' },
+            { name: 'Full Nelson', href: '#' },
+            { name: 'My Way', href: '#' },
+          ],
+        },
+      ],
+    },
   ],
   pages: [
-    { name: 'Company',href: '/' },
+    { name: 'Company', href: '/' },
     { name: 'Stores', href: '/displayproduct' },
   ],
 }
@@ -194,13 +195,13 @@ function classNames(...classes) {
 }
 
 export default function Navigation() {
-  
+
   const [open, setOpen] = useState(false)
 
   return (
     <div className="bg-white">
-  
-            {/* Mobile menu */}
+
+      {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -450,7 +451,7 @@ export default function Navigation() {
                                         </div>
                                       ))}
                                     </div>
-                                        </div>
+                                  </div>
                                 </div>
                               </div>
                             </Popover.Panel>
@@ -470,17 +471,88 @@ export default function Navigation() {
                     </a>
                   ))}
                 </div>
-              </Popover.Group>  
+              </Popover.Group>
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <Link to={"/signin"} className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Sign in
-                  </Link>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <Link to={"/signup"} className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Create account
-                  </Link>
+                  <Menu as="div" className="relative inline-block text-left">
+                    <div>
+                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        Options
+                        <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                      </Menu.Button>
+                    </div>
+
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div className="py-1">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Account settings
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Support
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                License
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <form method="get" action="/signin">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button
+                                  type="submit"
+                                 
+                                  className={classNames(
+                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                    'block w-full px-4 py-2 text-left text-sm'
+                                  )}
+                                >
+                                  Sign out
+                                </button>
+                              )}
+                            </Menu.Item>
+                          </form>
+                        </div>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
                   <Link to={"/AboutUs"} className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     AboutUs
                   </Link>

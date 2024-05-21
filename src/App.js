@@ -1,6 +1,6 @@
 import './App.css';
 import Navigation from './customer/components/Navigation/Navigation';
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
 import AboutUs from "./customer/components/Home/AboutUs.js"; 
 import Signin from "./customer/components/Home/Signin.js"
 import SignUp from "./customer/components/Home/SignUp.js";
@@ -18,8 +18,9 @@ function App() {
   return (
     <main className="container mt-5">
       <Router>
-        <Navigation />
         <Routes>
+          <Route path="/" element={<Navigate to="/signin" />} />
+          <Route exact path="/navigation" element={<Navigation/>}></Route>
           <Route exact path="/AboutUs" element={<AboutUs/>}></Route>
           <Route exact path="/signin" element={<Signin/>}></Route>
           <Route exact path="/signup" element={<SignUp/>}></Route>

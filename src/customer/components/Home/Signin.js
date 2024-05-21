@@ -22,7 +22,7 @@ export default function Signin() {
         try {
             await axios.post("http://localhost:8080/api/auth/login", usersDetail);
             alert("Successful login")
-            navigate("/displayproduct");
+            navigate("/navigation");
             } catch(err){
                 alert("Credencial not match")
                 alert(err);
