@@ -12,7 +12,7 @@ const links = [
     { name: 'Akshaykumar Patel', value: '53709' },
     { name: 'Bhagavatkumar Vekariya', value: '53713' },
     { name: 'Jaydeep Dabhi', value: '55010' },
-    { name: 'Rajanpreet Kaur', value: '-' },
+    { name: 'Rajanpreet Kaur', value: '54860' },
   ]
   
   export default function AboutUs() {

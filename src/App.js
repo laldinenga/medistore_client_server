@@ -6,11 +6,13 @@ import Signin from "./customer/components/Home/Signin.js"
 import SignUp from "./customer/components/Home/SignUp.js";
 import ProductDisplay from './customer/components/Product/ProductDisplay.js';
 import Fulldisplay from './customer/components/Product/Fulldisplay.js';
-import Shoppingcarts from "./customer/components/Home/Shoppingcarts.js";
+import Shoppingcarts from "./customer/components/Shopping_Cart/Shoppingcarts.js";
 import AddItem from "./customer/components/AdminPage/AddItem.js";
 import Viewitem from './customer/components/AdminPage/Viewitem.js';
 import CommonDisplayProduct from './customer/components/common/CommonDisplayProduct.js';
 import EditItems from './customer/components/AdminPage/EditItems.js';
+import Checkout from './customer/components/Shopping_Cart/Checkout.js';
+import Prescription from "./customer/components/Home/Prescription.js";
 
 
 
@@ -31,6 +33,9 @@ function App() {
           <Route exact path="/admin/viewitems" element={<Viewitem />}></Route>
           <Route exact path="/admin/viewitems/edititem/:id" element={<EditItems/>}></Route>
           <Route exact path="/navigateproduct/:category" element={<CommonDisplayProduct/>}></Route>
+          <Route exact path="/checkout" element={<Checkout/>}></Route>
+          <Route exact path="/prescription" element={<Prescription/>}></Route>
+          
   
         </Routes>
       </Router>

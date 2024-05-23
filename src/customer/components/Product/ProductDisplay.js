@@ -70,6 +70,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 // export default function ProductDisplay() {
 
@@ -118,7 +119,9 @@ export default function ProductDisplay() {
                             </div>
                             <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                             <p className="mt-2 text-lg font-medium text-gray-900">${product.price}</p>
-                            <a className= " mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded" href="/">Add to Cart</a>
+                            <Link to="/shoppingcart" className= " mt-2 bg-red-500 hover:bg-red-700 text-white font-bold pt-1 py-2 px-2 rounded"
+                            type="submit">Add to Cart</Link>
+                            {/* <a className= " mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded" href="/">Add to Cart</a> */}
                         </a>
                     ))}
                 </div>

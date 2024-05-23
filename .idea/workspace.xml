@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71c48072-0621-4ce2-bf34-3ad43a3e5d1c" name="Changes" comment="" />
+    <list default="true" id="71c48072-0621-4ce2-bf34-3ad43a3e5d1c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customer/components/AdminPage/AddItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer/components/AdminPage/AddItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customer/components/Home/Shoppingcarts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customer/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customer/components/Product/ProductDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer/components/Product/ProductDisplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customer/components/common/CommonDisplayProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/customer/components/common/CommonDisplayProduct.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +29,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/laldi/Desktop/PROGRAMMING/clientmedistore",
+    "last_opened_file_path": "C:/Users/laldi/Desktop/PROGRAMMING/medicalstore",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -39,7 +49,12 @@
       <option name="presentableId" value="Default" />
       <updated>1716248039748</updated>
       <workItem from="1716248041056" duration="70000" />
+      <workItem from="1716382685602" duration="15000" />
+      <workItem from="1716382733339" duration="19000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
